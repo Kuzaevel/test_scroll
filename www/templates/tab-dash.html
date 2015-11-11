@@ -1,0 +1,47 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+    <div class="list card">
+      <div class="item item-divider">Recent Updates</div>
+      <div class="item item-body">
+        <div>
+          There is a fire in <b>sector 3</b>
+        </div>
+      </div>
+    </div>
+    <div class="list card">
+      <div class="item item-divider">Health</div>
+      <div class="item item-body">
+        <div>
+          You ate an apple today!
+        </div>
+      </div>
+    </div>
+    <div class="list card">
+      <div class="item item-divider">Upcoming</div>
+      <div class="item item-body">
+        <div>
+          You have <b>29</b> meetings on your calendar tomorrow.
+        </div>
+      </div>
+    </div>
+	
+    <ion-content class="content content_no_footer">
+
+        <div ng-repeat="city in citys | filter:search " class="citylist">
+            <a href="#" class="item item_with_value_no_arrow" data-value="{{city.regionname}}" ng-click="selectCity(city)">{{city.cityname}}</a>
+        </div>
+
+    </ion-content>
+	
+    <ion-list>
+      <ion-item ng-repeat="city in citys">
+        <h2>{{city.cityname}}</h2>
+        <p>{{city.regionname}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+
+	
+	
+  </ion-content>
+</ion-view>
